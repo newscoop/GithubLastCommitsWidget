@@ -2,7 +2,7 @@
     "name": "takeit/github-latest-commits-bundle",
     "description": "Widget which display last commits to Newscoop repository.",
     "keywords": ["newscoop", "github", "cms", "integration", "widget", "commit"],
-    "version": "0.2",
+    "version": "1.0",
     "type": "newscoop-plugin",
     "license": "GPL-3.0",
     "authors": [
