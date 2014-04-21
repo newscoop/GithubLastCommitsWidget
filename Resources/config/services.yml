@@ -1,0 +1,7 @@
+services:
+    newscoop_github_latest_commits.lifecyclesubscriber:
+        class: Newscoop\GithubLatestCommitsBundle\EventListener\LifecycleSubscriber
+        arguments:
+            - @em
+        tags:
+            - { name: kernel.event_subscriber}

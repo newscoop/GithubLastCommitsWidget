@@ -1,0 +1,25 @@
+{
+    "name": "takeit/github-latest-commits-bundle",
+    "description": "Widget which display last commits to Newscoop repository.",
+    "keywords": ["newscoop", "github", "cms", "integration", "widget", "commit"],
+    "version": "0.2",
+    "type": "newscoop-plugin",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Rafał Muszyński",
+            "email": "rafal.muszynski@sourcefabric.org"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "ext-curl": "*",
+        "kriswallsmith/buzz": ">=v0.9",
+        "newscoop/plugins-installer": ">=v0.2"
+    },
+    "autoload": {
+        "psr-0": { "Newscoop\\GithubLatestCommitsBundle": "" }
+    },
+    "target-dir": "Newscoop/GithubLatestCommitsBundle",
+    "minimum-stability": "dev"
+}

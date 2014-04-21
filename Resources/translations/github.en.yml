@@ -1,0 +1,10 @@
+github:
+  label:
+    head: "Newscoop latest changes! Update often!"
+    day: "day"
+    days: "days"
+    hour: "hour"
+    hours: "hours"
+    minute: "minute"
+    minutes: "minutes"
+    ago: "ago"
