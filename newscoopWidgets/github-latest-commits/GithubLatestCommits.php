@@ -86,7 +86,7 @@ class GithubLatestCommits extends Widget
                 $string = '';
                 if ($diff->d >= 1) {
                     $days = $diff->d;
-                    $string .= $days + 1;
+                    $string .= $days;
 
                     if ($days > 1) {
                         $string .= ' ' . $this->translator->trans('github.label.days', array(), 'github');
