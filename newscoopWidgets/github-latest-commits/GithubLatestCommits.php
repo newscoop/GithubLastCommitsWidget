@@ -37,11 +37,22 @@ class GithubLatestCommits extends Widget
     public function beforeRender()
     {
         try {
-            $curlClient = new \Buzz\Client\Curl();
-            $curlClient->setTimeout(10000);
-            $browser = new \Buzz\Browser($curlClient);
-            $result =  $browser->get($this->apiUrl . 'repos/sourcefabric/newscoop/commits', array('User-Agent' => 'Newscoop'));
-            $commits = json_decode($result->getContent(), true);
+
+            $cacheService = \Zend_Registry::get('container')->getService('newscoop.cache');
+            $cacheKey = 'github_commits__' . md5('github_commits__');
+            $commits = array();
+
+            if ($cacheService->contains($cacheKey)) {
+                $commits = $cacheService->fetch($cacheKey);
+            } else {
+                $curlClient = new \Buzz\Client\Curl();
+                $curlClient->setTimeout(10000);
+                $browser = new \Buzz\Browser($curlClient);
+                $result =  $browser->get($this->apiUrl . 'repos/sourcefabric/newscoop/commits', array('User-Agent' => 'Newscoop'));
+                $commits = json_decode($result->getContent(), true);
+                $cacheService->save($cacheKey, $commits, 600);
+            }
+
             $this->commits = $this->prepareArray($commits);
         } catch(\Buzz\Exception\ClientException $e) {
             throw new \Buzz\Exception\ClientException();
@@ -74,9 +85,10 @@ class GithubLatestCommits extends Widget
             if ($commit['commit']['author']['date']) {
                 $string = '';
                 if ($diff->d >= 1) {
-                    $string .= $diff->d;
+                    $days = $diff->d;
+                    $string .= $days + 1;
 
-                    if ($diff->d > 1) {
+                    if ($days > 1) {
                         $string .= ' ' . $this->translator->trans('github.label.days', array(), 'github');
                     } else {
                         $string .= ' ' . $this->translator->trans('github.label.day', array(), 'github');
@@ -84,12 +96,12 @@ class GithubLatestCommits extends Widget
                 } else {
                     if ($diff->h > 1) {
                         $string .= $diff->h;
-                        $string .= ' ' . $this->translator->trans('github.label.hours ', array(), 'github');
+                        $string .= ' ' . $this->translator->trans('github.label.hours', array(), 'github') . ' ';
                     }
 
                     if ($diff->h == 1) {
                         $string .= $diff->h;
-                        $string .= ' ' . $this->translator->trans('github.label.hour ', array(), 'github');
+                        $string .= ' ' . $this->translator->trans('github.label.hour', array(), 'github') . ' ';
                     }
 
                     $string .= $diff->i == 0 ? 1 : $diff->i;
