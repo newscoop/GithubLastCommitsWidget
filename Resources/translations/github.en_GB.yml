@@ -1,10 +1,10 @@
 github:
     label:
-        head: null
-        day: null
-        days: null
-        hour: null
-        hours: null
-        minute: null
-        minutes: null
-        ago: null
+        head: 'Newscoop latest changes! Update often!'
+        day: day
+        days: days
+        hour: hour
+        hours: hours
+        minute: minute
+        minutes: minutes
+        ago: ago
