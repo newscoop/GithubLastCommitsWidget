@@ -1,7 +1,7 @@
 github:
     label:
-        head: null
-        day: null
+        head: 'آخر التغييرات من نيوسكوب! قم بالتحديث دائماً.'
+        day: يوم
         days: null
         hour: null
         hours: null
