@@ -2,9 +2,9 @@ github:
     label:
         head: 'آخر التغييرات من نيوسكوب! قم بالتحديث دائماً.'
         day: يوم
-        days: null
-        hour: null
-        hours: null
-        minute: null
-        minutes: null
-        ago: null
+        days: أيام
+        hour: ساعة
+        hours: ساعات
+        minute: دقيقة
+        minutes: دقائق
+        ago: مضى
