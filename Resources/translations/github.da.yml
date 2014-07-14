@@ -1,10 +1,10 @@
 github:
     label:
         head: null
-        day: null
-        days: null
-        hour: null
-        hours: null
-        minute: null
-        minutes: null
-        ago: null
+        day: dag
+        days: dage
+        hour: time
+        hours: timer
+        minute: minut
+        minutes: minutter
+        ago: siden
