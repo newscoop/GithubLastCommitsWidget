@@ -1,10 +1,10 @@
 github:
     label:
-        head: null
-        day: null
-        days: null
-        hour: null
-        hours: null
-        minute: null
-        minutes: null
-        ago: null
+        head: 'A Newscoop legutóbbi változtatásai! Frissíts gyakran! '
+        day: nap
+        days: napok
+        hour: óra
+        hours: órák
+        minute: perc
+        minutes: percek
+        ago: ezelőtt
