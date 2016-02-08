@@ -1,10 +1,10 @@
 github:
     label:
         head: null
-        day: null
-        days: null
+        day: День
+        days: Дней
         hour: null
-        hours: null
+        hours: часов
         minute: null
-        minutes: null
-        ago: null
+        minutes: минут
+        ago: назад
