@@ -7,4 +7,4 @@ github:
         hours: часов
         minute: null
         minutes: минут
-        ago: назад
+        ago: null
